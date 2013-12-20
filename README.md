@@ -25,12 +25,21 @@ Settings
 
 * ``JLDefaultLocalizableType``
     * Filetype of the translation mapping 
-    *  The default filetype for the translation is _".strings"_
+    *  The default filetype for the translation is _"strings"_
 
 * ``JLDefaultImageImageType``
     * Default filetype of the image.
     * If you try to localized the image you do not need to put the filetype if the image you are looking for is the same type as the default. _(i.e. png, jpg, jpeg)_
     
+Protocol
+--------
+
+* ``JLLocalizedMeLanguageUpdateDelegate``
+   * A protocol that will handle the on the fly change
+   * ``-(void)localizedMeOnTheFlyUpdate;``
+      * This is the method that we need to put the re-initialization of the strings or refreshing of the views
+
+
 
 Usage
 -----
@@ -38,8 +47,25 @@ Usage
 <b>String localization</b>
 
   * ``LocalizedMyString(string)``
-    * Macro that handles easy instantiation/use of the class localizedMe
+    * A convenience method that handles easy instantiation/use of the class localizedMe
     * *LocalizedMyString(@"The\_string\_that\_you\_want\_to\_localized");*
     
+<b>Image Localization</b>
+
+ * ``LocalizedMyImage``
+   *  A convenience that handles image based on the selected language
+   *  Localized the image first by selecting the image then click "Localize" in the inspector
+   * *LocalizedMeImage(@"ImageName");*
+   
+
+<b>Set up the preferred language</b>
+ * ``LocalizedMeLanguageSet(string,delegate)``
+   * A convenience method that handles language setting
+   * It requires 2 parameters
+      * The language designation with the ISO 639-1 format _(i.e. en, fr, es, etc.)_
+      * An optional delegate to handle the callback to setup the on the fly language change. Pass _nil_ if you want the program to be restarted for the new language to take effect. 
+   * *LocalizedMeLanguageSet(@"language_designation_ISO_639-1",@"Delegate_to_handle_refresh");*
+   
+
         
     
