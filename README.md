@@ -53,7 +53,7 @@ Usage
 <b>Image Localization</b>
 
  * ``LocalizedMyImage``
-   *  A convenience that handles image based on the selected language
+   *  A convenience method that handles image based on the selected language
    *  Localized the image first by selecting the image then click "Localize" in the inspector
    * *LocalizedMeImage(@"ImageName");*
    
