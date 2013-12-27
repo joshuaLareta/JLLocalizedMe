@@ -45,6 +45,12 @@ Protocol
 Usage
 -----
 
+<b>JLLocalizedMe Init</b>
+  * ``JLLocalizedMeInit()``
+    * A convenience method that handles the initialization of JLLocalizedMe class
+    * It must be initialized in the _didFinishedLaunchingWithOptions_ method
+    * *JLLocalizedMeInit();*
+
 <b>String localization</b>
 
   * ``LocalizedMyString(string)``
@@ -53,7 +59,7 @@ Usage
     
 <b>Image Localization</b>
 
- * ``LocalizedMyImage``
+ * ``LocalizedMyImage(string)``
    *  A convenience method that handles image based on the selected language
    *  Localized the image first by selecting the image then click "Localize" in the inspector
    * *LocalizedMeImage(@"ImageName");*
