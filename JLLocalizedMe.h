@@ -27,7 +27,7 @@
  
  0 = Use system language change and application will restart
  1 = Use on the fly change
- 
+ 2 = Use on the fly change but needs to be restarted
  */
 
 #define KCLocalized 1    
@@ -76,6 +76,22 @@
 
 #define JLDefaultImageImageType @"png"
 
+
+
+
+/*
+ 
+ Macro that handles the initialization of localizedMe
+ 
+ Usage:
+ 
+    JLLocalizedMeInit();
+ 
+ 
+ */
+
+#define JLLocalizedMeInit()\
+        [[JLLocalizedMe sharedInstance]localizedMeInit];
 
 
 /*
@@ -149,7 +165,10 @@ usage:
 
 -(void)localizeMeLanguageSet:(NSString *)lang forDelegate:(id<JLLocalizedMeLanguageUpdateDelegate>)delegate; // Uses ISO 639-1 language designation (i.e. en,es,fr, etc.) and delegation for view refresh
 
--(UIImage *)localizedMeImage:(NSString *)ImageName;
+-(UIImage *)localizedMeImage:(NSString *)ImageName; // method to fetched localized Image
+
+-(void)localizedMeInit; // init the JLLocalizedMe Class
+
 
 
 @end
