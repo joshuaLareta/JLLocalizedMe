@@ -12,6 +12,7 @@ Settings
     * Determines whether the application will use on-the fly change or system change
        *  0 - Use system language change and application will restart
        *  1 - Use on the fly change (need not restart but must implement the view refresh)
+       *  2 - Use on the fly change but needs to be restarted
   
 
 * ``JLLocalizedMeLangageDefault``
