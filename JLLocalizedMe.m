@@ -58,7 +58,7 @@ static NSArray *listOfImageFileType = nil; // list of image file type currently 
     
     
     //check if whether we are going to use the system setting or on the fly change
-    if(KCLocalized == 1 || KCLocalized == 3){
+    if(KCLocalized == 1 || KCLocalized == 2){
         
         NSUserDefaults *initPref = [NSUserDefaults standardUserDefaults];
         BOOL isInit = [initPref boolForKey:JLLocalizedMeInit];
@@ -66,7 +66,7 @@ static NSArray *listOfImageFileType = nil; // list of image file type currently 
         //check if application is already restarted
 
         
-        if(KCLocalized == 1||(KCLocalized == 3 && isInit)){
+        if(KCLocalized == 1||(KCLocalized == 2 && isInit)){
             NSString *selectedLang = [self selectedLanguagePref]; // get selected language preference
             
                  
@@ -132,13 +132,13 @@ static NSArray *listOfImageFileType = nil; // list of image file type currently 
     BOOL shouldGetDefaultType = YES;
     
     
-    if(KCLocalized == 1 || KCLocalized == 3){
+    if(KCLocalized == 1 || KCLocalized == 2){
         
         NSUserDefaults *initPref = [NSUserDefaults standardUserDefaults];
         BOOL isInit = [initPref boolForKey:JLLocalizedMeInit];
         
         //check if application is already restarted
-        if(KCLocalized == 1 ||(KCLocalized == 3 && isInit)){
+        if(KCLocalized == 1 ||(KCLocalized == 2 && isInit)){
         
             NSMutableArray *getExtension = [[imageName componentsSeparatedByString:@"."] mutableCopy];
             if([getExtension respondsToSelector:@selector(count)]){
